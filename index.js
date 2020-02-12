@@ -4,9 +4,12 @@ const fs = require("fs")
 const questions = [
   "What is your name?",
   "Where are you located?",
-  "Give a description of yourself:",
+  "Give a description of yourself: ",
   'What is the URL to your LinkedIn?',
-  "What is the URL to you GitHub?"
+  "What is the URL to you GitHub?",
+  "List your favorite movies: ",
+  "List your favorite songs: ",
+  "List your favorite books: "
 ];
 
 function init() {
@@ -35,7 +38,23 @@ function init() {
       type: "input",
       name: 'github',
       message: questions[4]
+    }, 
+    {
+      type: "input",
+      name: 'movies',
+      message: questions[5]
+    },
+    {
+      type: "input",
+      name: 'songs',
+      message: questions[6]
+    },
+    {
+      type: "input",
+      name: 'books',
+      message: questions[7]
     }
+
   ])
     .then(response => {
       let user = {
@@ -43,7 +62,10 @@ function init() {
         location: response.location,
         description: response.description,
         linkedIn: response.linkedIn,
-        github: response.github
+        github: response.github,
+        movies: response.movies,
+        songs: response.songs,
+        books: response.books
       };
       
       buildHTML(user)
