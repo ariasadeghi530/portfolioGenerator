@@ -68,7 +68,8 @@ function init() {
         books: response.books
       };
       
-      buildHTML(user)
+      buildHTML(user);
+      buildHTMLfavs(user);
     })
 }
 
@@ -90,16 +91,23 @@ html = `
 <div class='container'>
   <h1>Name: ${user.name}</h1>
   <h2>Location: ${user.location}</h2>
-  <p>${}</p>
+  <p>${user.description}</p>
   <a href="${user.linkedIn}" class="links">LinkedIn</a>
   <a href="${user.github}" class="links">Github</a>
 </div>
 </body>
 </html>
-`
+`;
+
+  let fileNameFaves = `${user.name.replace(' ', "_")}.html`
+  fs.writeFile(fileNameFaves, html, (err) => {
+    if (err) throw err;
+    console.log('Saved!');
+  });
+};
 
   const buildHTMLfavs = (user) => {
-    html = `
+    htmlFaves = `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -113,15 +121,15 @@ html = `
 <body> 
 <div class='container'>
   <h1>Name: ${user.name}</h1>
-  <p>Movie: ${}</p>
-  <p>Songs: ${}</p>
-  <p>Books: ${}</p>
+  <p>Movie: ${user.movies}</p>
+  <p>Songs: ${user.songs}</p>
+  <p>Books: ${user.books}</p>
 </div>
 </body>
 </html>
 `
-  let fileName = `${ user.name.replace(' ', "_") }.html`
-  fs.writeFile(fileName, html, (err) => {
+  let fileName = `${ user.name.replace(' ', "_") }-faves.html`
+  fs.writeFile(fileName, htmlFaves, (err) => {
     if (err) throw err;
     console.log('Saved!');
   });
