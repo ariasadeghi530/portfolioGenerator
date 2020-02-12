@@ -1,0 +1,23 @@
+{
+  "name": "portfolioGenerator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ariasadeghi530/portfolioGenerator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ariasadeghi530/portfolioGenerator/issues"
+  },
+  "homepage": "https://github.com/ariasadeghi530/portfolioGenerator#readme",
+  "dependencies": {
+    "inquirer": "^7.0.4"
+  }
+}
