@@ -4,7 +4,7 @@ const fs = require("fs")
 const questions = [
   "What is your name?",
   "Where are you located?",
-  "Give a description of yourself.",
+  "Give a description of yourself:",
   'What is the URL to your LinkedIn?',
   "What is the URL to you GitHub?"
 ];
@@ -45,7 +45,7 @@ function init() {
         linkedIn: response.linkedIn,
         github: response.github
       };
-      console.log(user);
+      
       buildHTML(user)
     })
 }
@@ -75,7 +75,7 @@ html = `
 </body>
 </html>
 `
-  let fileName = `${ user.name }.html`
+  let fileName = `${ user.name.replace(' ', "_") }.html`
   fs.writeFile(fileName, html, (err) => {
     if (err) throw err;
     console.log('Saved!');
