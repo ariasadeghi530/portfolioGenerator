@@ -90,9 +90,32 @@ html = `
 <div class='container'>
   <h1>Name: ${user.name}</h1>
   <h2>Location: ${user.location}</h2>
-  <p>${user.description}</p>
+  <p>${}</p>
   <a href="${user.linkedIn}" class="links">LinkedIn</a>
   <a href="${user.github}" class="links">Github</a>
+</div>
+</body>
+</html>
+`
+
+  const buildHTMLfavs = (user) => {
+    html = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${user.name} - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/reset.css">
+  <link rel="stylesheet" href="./assets/styles.css">
+</head>
+<body> 
+<div class='container'>
+  <h1>Name: ${user.name}</h1>
+  <p>Movie: ${}</p>
+  <p>Songs: ${}</p>
+  <p>Books: ${}</p>
 </div>
 </body>
 </html>
