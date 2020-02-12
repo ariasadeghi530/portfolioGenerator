@@ -1,0 +1,16 @@
+.container {
+  display: inline-block;
+  padding: 1%;
+  margin: 1%;
+  background-color: rgb(199, 199, 199);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  width: 300px;
+}
+
+.links {
+  display: block;
+}
